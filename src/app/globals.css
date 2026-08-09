@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0D0D0D;
+  --color-surface: #161616;
+  --color-primary: #F1EFE9;
+  --color-muted: #96938D;
+  --color-border-subtle: #2A2927;
+  --color-accent: #FF5A36;
+  
+  --color-inverted-bg: #F1EFE9;
+  --color-inverted-text: #111111;
+
+  --font-sans: var(--font-instrument-sans);
+  --font-mono: var(--font-ibm-plex-mono);
+}
+
+:root {
+  --background: #0D0D0D;
+  --foreground: #F1EFE9;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-instrument-sans), sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Selection */
+::selection {
+  background: #FF5A36;
+  color: #F1EFE9;
+}
+
+/* Hide cursor on desktop devices to use custom cursor */
+@media (pointer: fine) {
+  body, a, button {
+    cursor: none;
+  }
+}
+
+/* Lenis smooth scrolling defaults */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
