@@ -14,10 +14,10 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full px-6 py-8 md:px-12 md:py-10 z-50 mix-blend-difference pointer-events-none flex justify-between items-center">
+    <nav className="fixed top-0 left-0 w-full px-6 py-4 md:px-12 md:py-6 z-50 bg-[#0F0F0F]/70 backdrop-blur-md border-b border-white/5 flex justify-between items-center transition-all duration-300">
       
       {/* Brand / Logo */}
-      <div className="pointer-events-auto">
+      <div>
         <Link 
           href="/" 
           data-cursor-text="HOME"
@@ -28,7 +28,7 @@ export default function Navbar() {
       </div>
 
       {/* Navigation Links */}
-      <div className="pointer-events-auto flex gap-6 md:gap-8 items-center">
+      <div className="flex gap-6 md:gap-8 items-center">
         {navLinks.map((link) => (
           <Link
             key={link.name}
