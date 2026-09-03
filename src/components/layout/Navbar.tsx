@@ -13,7 +13,7 @@ export default function Navbar() {
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Achievements", href: "/#achievements" },
-    { name: "Contact", href: "/contact" }
+    { name: "Contact", href: "/contact" },
   ];
 
   useEffect(() => {
@@ -53,7 +53,9 @@ export default function Navbar() {
               data-cursor-text="VIEW"
               className={cn(
                 "font-mono text-sm uppercase tracking-widest transition-colors duration-300",
-                pathname === link.href ? "text-accent" : "text-primary hover:text-accent"
+                pathname === link.href
+                  ? "text-accent"
+                  : "text-primary hover:text-accent",
               )}
             >
               {link.name}
@@ -63,23 +65,27 @@ export default function Navbar() {
 
         <button
           type="button"
-          aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-label={
+            isMenuOpen ? "Close navigation menu" : "Open navigation menu"
+          }
           aria-expanded={isMenuOpen}
           aria-controls="mobile-navigation"
           onClick={() => setIsMenuOpen((open) => !open)}
           className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/15 md:hidden"
         >
-          <span className="sr-only">{isMenuOpen ? "Close menu" : "Open menu"}</span>
+          <span className="sr-only">
+            {isMenuOpen ? "Close menu" : "Open menu"}
+          </span>
           <span
             className={cn(
               "absolute h-px w-4 bg-primary transition-transform duration-300",
-              isMenuOpen ? "rotate-45" : "-translate-y-1"
+              isMenuOpen ? "rotate-45" : "-translate-y-1",
             )}
           />
           <span
             className={cn(
               "absolute h-px w-4 bg-primary transition-transform duration-300",
-              isMenuOpen ? "-rotate-45" : "translate-y-1"
+              isMenuOpen ? "-rotate-45" : "translate-y-1",
             )}
           />
         </button>
@@ -90,7 +96,9 @@ export default function Navbar() {
         aria-hidden={!isMenuOpen}
         className={cn(
           "fixed inset-0 z-[90] overflow-y-auto bg-background px-6 pb-8 pt-28 transition-[opacity,visibility] duration-500 md:hidden",
-          isMenuOpen ? "visible opacity-100" : "invisible opacity-0 pointer-events-none"
+          isMenuOpen
+            ? "visible opacity-100"
+            : "invisible opacity-0 pointer-events-none",
         )}
       >
         <div className="pointer-events-none absolute bottom-0 left-5 top-0 w-px bg-accent/70" />
@@ -121,11 +129,10 @@ export default function Navbar() {
           </div>
 
           <div className="mt-auto flex items-end justify-between gap-6 pl-12 pt-10 font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
-            <div>
-              <span className="mb-2 block h-2 w-2 rounded-full bg-accent shadow-[0_0_12px_rgba(255,90,54,0.8)]" />
-              Available for opportunities
+            <div className="flex items-center justify-center gap-4">
+              <span className="block h-2 w-2 rounded-full bg-accent shadow-[0_0_12px_rgba(255,90,54,0.8)]" />
+              <span>Available for opportunities</span>
             </div>
-            <span className="text-right">Berlin, DE<br />2026</span>
           </div>
         </div>
       </div>
