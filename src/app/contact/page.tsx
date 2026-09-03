@@ -155,10 +155,10 @@ export default function ContactPage() {
             <div>
               <p className="font-mono text-muted text-sm tracking-widest uppercase mb-4">Socials</p>
               <div className="flex flex-col gap-3 text-lg md:text-xl">
-                <a href="https://linkedin.com/in/adilkhatri" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-accent transition-colors group w-fit">
+                <a href="https://linkedin.com/in/adil-khatri" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-accent transition-colors group w-fit">
                   LinkedIn <ArrowUpRight className="w-5 h-5 opacity-0 -translate-y-2 -translate-x-2 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all" />
                 </a>
-                <a href="https://github.com/adilkhatri" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-accent transition-colors group w-fit">
+                <a href="https://github.com/adil-khatri" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-accent transition-colors group w-fit">
                   GitHub <ArrowUpRight className="w-5 h-5 opacity-0 -translate-y-2 -translate-x-2 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all" />
                 </a>
                 <a href="https://www.instagram.com/adil_khatri_2346/" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-accent transition-colors group w-fit">

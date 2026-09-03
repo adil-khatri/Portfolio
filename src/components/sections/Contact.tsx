@@ -80,8 +80,8 @@ export default function Contact() {
           &copy; {new Date().getFullYear()} ADIL KHATRI. ALL RIGHTS RESERVED.
         </p>
         <div className="flex gap-6 font-mono text-xs uppercase tracking-widest">
-          <Link href="https://github.com/adilkhatri" target="_blank" className="hover:text-accent transition-colors">GitHub</Link>
-          <Link href="https://linkedin.com/in/adilkhatri" target="_blank" className="hover:text-accent transition-colors">LinkedIn</Link>
+          <Link href="https://github.com/adil-khatri" target="_blank" className="hover:text-accent transition-colors">GitHub</Link>
+          <Link href="https://linkedin.com/in/adil-khatri" target="_blank" className="hover:text-accent transition-colors">LinkedIn</Link>
           {/* <Link href="/resume.pdf" target="_blank" className="hover:text-accent transition-colors">Resume</Link> */}
         </div>
       </div>
