@@ -1,20 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
-import { ArrowUpRight, ArrowDown } from "lucide-react";
-import { clsx } from "clsx";
-import { twMerge } from "tailwind-merge";
-
-export function cn(...inputs: (string | undefined | null | false)[]) {
-  return twMerge(clsx(inputs));
-}
 
 export default function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
-  const [cursorText, setCursorText] = useState("");
-  const [cursorIcon, setCursorIcon] = useState<"external" | "download" | null>(null);
-  const [isHovering, setIsHovering] = useState(false);
   const [isHidden, setIsHidden] = useState(true);
 
   useEffect(() => {
@@ -26,42 +15,33 @@ export default function CustomCursor() {
     const cursor = cursorRef.current;
     if (!cursor) return;
 
-    // Use GSAP quickTo for highly performant tracking
-    const xTo = gsap.quickTo(cursor, "x", { duration: 0.2, ease: "power3" });
-    const yTo = gsap.quickTo(cursor, "y", { duration: 0.2, ease: "power3" });
+    let hidden = true;
 
-    const onMouseMove = (e: MouseEvent) => {
-      setIsHidden(false);
-      xTo(e.clientX);
-      yTo(e.clientY);
+    const onPointerMove = (e: PointerEvent) => {
+      cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
 
-      // Check hovered elements for data-cursor attributes
-      const target = e.target as HTMLElement;
-      const cursorTarget = target.closest("[data-cursor]");
-      
-      if (cursorTarget) {
-        setIsHovering(true);
-        const text = cursorTarget.getAttribute("data-cursor-text") || "";
-        const icon = cursorTarget.getAttribute("data-cursor-icon") as "external" | "download" | null;
-        
-        setCursorText(text);
-        setCursorIcon(icon);
-      } else {
-        setIsHovering(false);
-        setCursorText("");
-        setCursorIcon(null);
+      if (hidden) {
+        hidden = false;
+        setIsHidden(false);
       }
+
     };
 
-    const onMouseLeave = () => setIsHidden(true);
-    const onMouseEnter = () => setIsHidden(false);
+    const onMouseLeave = () => {
+      hidden = true;
+      setIsHidden(true);
+    };
+    const onMouseEnter = () => {
+      hidden = false;
+      setIsHidden(false);
+    };
 
-    window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("pointermove", onPointerMove, { passive: true });
     document.addEventListener("mouseleave", onMouseLeave);
     document.addEventListener("mouseenter", onMouseEnter);
 
     return () => {
-      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("pointermove", onPointerMove);
       document.removeEventListener("mouseleave", onMouseLeave);
       document.removeEventListener("mouseenter", onMouseEnter);
     };
@@ -70,23 +50,7 @@ export default function CustomCursor() {
   return (
     <div
       ref={cursorRef}
-      className={cn(
-        "pointer-events-none fixed top-0 left-0 z-50 flex items-center justify-center rounded-full mix-blend-difference transition-all duration-300 ease-out",
-        "transform -translate-x-1/2 -translate-y-1/2",
-        isHidden ? "opacity-0" : "opacity-100",
-        isHovering ? "h-24 w-24 bg-accent" : "h-4 w-4 bg-primary"
-      )}
-    >
-      <div
-        className={cn(
-          "flex items-center justify-center gap-1 font-mono text-sm font-medium text-background transition-opacity duration-300",
-          isHovering ? "opacity-100" : "opacity-0"
-        )}
-      >
-        {cursorText && <span>{cursorText}</span>}
-        {cursorIcon === "external" && <ArrowUpRight className="h-4 w-4" />}
-        {cursorIcon === "download" && <ArrowDown className="h-4 w-4" />}
-      </div>
-    </div>
+      className={`pointer-events-none fixed top-0 left-0 z-[200] h-4 w-4 rounded-full bg-primary mix-blend-difference will-change-transform transition-opacity duration-150 ${isHidden ? "opacity-0" : "opacity-100"}`}
+    />
   );
 }

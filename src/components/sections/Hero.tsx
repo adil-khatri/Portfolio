@@ -69,16 +69,19 @@ export default function Hero() {
           ADIL<br />KHATRI
         </h1>
 
-        {/* Profile Image - Desktop only, right-aligned center */}
-        <div 
-          ref={imageRef}
-          className="hidden lg:block absolute top-1/2 right-15 -translate-y-1/2 w-[650px] z-0 pointer-events-none opacity-0"
-        >
-          <img 
-            src="/images/Adil-profile-ohnebg.png" 
-            alt="Adil Khatri"
-            className="w-full h-auto object-contain shadow-md"
-          />
+        {/* Centered below the name on mobile; right-aligned on desktop. */}
+        <div className="relative z-0 mx-auto mt-8 w-[78vw] max-w-[360px] lg:absolute lg:top-1/2 lg:right-15 lg:mt-0 lg:w-[650px] lg:max-w-none lg:-translate-y-1/2">
+          <div ref={imageRef} className="pointer-events-none opacity-0">
+            <Image
+              src="/images/Adil-profile-ohnebg.png"
+              alt="Adil Khatri"
+              width={1448}
+              height={1086}
+              priority
+              sizes="(max-width: 1023px) 78vw, 650px"
+              className="h-auto w-full object-contain shadow-md"
+            />
+          </div>
         </div>
       </div>
       

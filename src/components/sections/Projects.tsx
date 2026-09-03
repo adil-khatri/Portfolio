@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/projects";
 
 export default function Projects() {
@@ -85,23 +84,18 @@ export default function Projects() {
 
       <div className="flex flex-col border-t border-[#111111]/20">
         {projects.map((project, index) => (
-          <a
+          <div
             key={project.id}
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-cursor-text="VIEW"
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={handleMouseLeave}
-            className="group block py-12 md:py-20 border-b border-[#111111]/20 hover:bg-[#111111]/5 transition-colors duration-500 -mx-4 md:-mx-24 px-4 md:px-24"
+            className="group py-12 md:py-20 border-b border-[#111111]/20 hover:bg-[#111111]/5 transition-colors duration-500 -mx-4 md:-mx-24 px-4 md:px-24"
           >
             <div className="flex flex-col md:flex-row gap-8 justify-between">
-              {/* Title & Arrow */}
-              <div className="md:w-1/2 flex items-start justify-between">
+              {/* Title */}
+              <div className="md:w-1/2">
                 <h4 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter group-hover:text-accent transition-colors duration-300">
                   {project.title}
                 </h4>
-                <ArrowUpRight className="w-8 h-8 opacity-0 -translate-x-4 translate-y-4 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300 ease-out text-accent" />
               </div>
               
               {/* Description Block */}
@@ -135,7 +129,7 @@ export default function Projects() {
                 </div>
               </div>
             </div>
-          </a>
+          </div>
         ))}
       </div>
     </section>

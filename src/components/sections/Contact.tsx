@@ -58,7 +58,7 @@ export default function Contact() {
       <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(circle_at_center,_var(--color-accent)_0,_transparent_100%)] mix-blend-screen" />
       
       <p className="font-mono text-sm tracking-widest uppercase text-muted mb-8 z-10">
-        04 // Next Steps
+        05 // Next Steps
       </p>
       
       <Link 
