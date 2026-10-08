@@ -1,18 +1,18 @@
 export const skills = [
   {
     category: "Frontend",
-    items: ["React.js", "Next.js", "TypeScript", "JavaScript", "HTML5", "Tailwind CSS"]
+    items: ["React 18", "Next.js", "TypeScript", "Tailwind CSS", "GSAP", "Vite"]
   },
   {
     category: "Backend",
-    items: ["Node.js", "NestJS", "Express.js", "MongoDB", "Neo4j", "REST APIs"]
+    items: ["FastAPI", "Node.js", "NestJS", "Express.js", "MongoDB", "Neo4j", "REST APIs"]
   },
   {
-    category: "AI",
-    items: ["LLM Integration", "Multi-Agent Systems", "RAG Pipelines", "Prompt Engineering", "Data Modeling"]
+    category: "AI & ML",
+    items: ["Whisper ASR", "Speaker Diarization", "LLM Integration", "Multi-Agent Systems", "Ollama", "RAG Pipelines"]
   },
   {
-    category: "Designing",
-    items: ["UI / UX Design", "Figma", "Responsive Layouts", "Interactive Prototyping", "Design Systems"]
+    category: "Infrastructure",
+    items: ["Docker", "Air-Gap Deployment", "Distributed Systems", "Git", "CI/CD", "Linux"]
   }
 ];
