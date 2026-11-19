@@ -1,18 +1,71 @@
 export const skills = [
   {
     category: "Frontend",
-    items: ["React 18", "Next.js", "TypeScript", "Tailwind CSS", "GSAP", "Vite"]
+    items: [
+      "React.js",
+      "Next.js",
+      "Angular",
+      "TypeScript",
+      "JavaScript",
+      "Tailwind CSS",
+      "HTML",
+      "CSS"
+    ]
   },
   {
-    category: "Backend",
-    items: ["FastAPI", "Node.js", "NestJS", "Express.js", "MongoDB", "Neo4j", "REST APIs"]
+    category: "Backend & APIs",
+    items: [
+      "Python",
+      "Node.js",
+      "NestJS",
+      "FastAPI",
+      "Flask",
+      "REST APIs"
+    ]
+  },
+  {
+    category: "Databases & Data",
+    items: [
+      "SQL",
+      "MySQL",
+      "MongoDB",
+      "Firebase",
+      "Redis",
+      "Neo4j",
+      "FAISS"
+    ]
   },
   {
     category: "AI & ML",
-    items: ["Whisper ASR", "Speaker Diarization", "LLM Integration", "Multi-Agent Systems", "Ollama", "RAG Pipelines"]
+    items: [
+      "LLM Integration",
+      "RAG Pipelines",
+      "LangChain",
+      "Multi-Agent Systems",
+      "Speaker Recognition",
+    ]
   },
   {
-    category: "Infrastructure",
-    items: ["Docker", "Air-Gap Deployment", "Distributed Systems", "Git", "CI/CD", "Linux"]
+    category: "Engineering & DevOps",
+    items: [
+      "Git",
+      "Docker",
+      "GitHub Actions",
+      "CI/CD",
+      "Integration Testing",
+      "Debugging",
+      "Root-Cause Analysis",
+      "Agile / Scrum",
+      "Jira",
+      "GCP"
+    ]
+  },
+  {
+    category: "Development Tools",
+    items: [
+      "Claude Code",
+      "OpenAI Codex",
+      "Google Antigravity"
+    ]
   }
 ];
