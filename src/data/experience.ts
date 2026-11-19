@@ -10,7 +10,7 @@ export interface Experience {
 export const experiences: Experience[] = [
   {
     id: "exp-01",
-    year: "06/2025 - 09/2026",
+    year: "06/2025 - 10/2026",
     company: "DAS Innovations UG",
     role: "Software Development Working Student",
     description: "Developed frontend features for ExoPaper, a business SaaS platform. Built React.js and TypeScript interfaces focused on usability and responsive behavior. Integrated frontend modules with backend REST APIs and delivered client-facing WordPress/Divi websites.",
